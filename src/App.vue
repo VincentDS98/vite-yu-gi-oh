@@ -9,7 +9,8 @@ import axios from 'axios';
 export default {
   data() {
     return { 
-        
+        baseUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+        card: []
     };
 
   },
@@ -23,8 +24,10 @@ export default {
 
   },
   mounted() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php').then((response) => {
-      console.log(response)
+    axios.get(this.baseUrl).then((response) => {
+      //console.log(response.data)
+      this.card = response.data;
+      console.log(this.card); 
     });
   }
   
