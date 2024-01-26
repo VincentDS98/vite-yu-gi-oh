@@ -12,8 +12,15 @@ export default {
 
 <template>
    <footer>
-      footer
-   </footer>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+           footer
+        </div>
+      </div>
+    </div>
+     
+   </footer> 
     
 </template>
 
