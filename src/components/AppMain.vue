@@ -6,6 +6,9 @@ export default {
       
     };
   },
+  props: {
+    allCards: Array
+  }
   
 }
 </script>
@@ -14,8 +17,8 @@ export default {
    <main>
       <div class="container">
         <div class="row">
-          <div class="col" v-for="i in 20" :key="i">
-            Personaggio
+          <div class="col" v-for="(cards, i) in allCards" :key="i">
+            Carte
           </div>
         </div>
       </div>

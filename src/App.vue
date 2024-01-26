@@ -10,7 +10,7 @@ export default {
   data() {
     return { 
         baseUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
-        card: []
+        cards: []
     };
 
   },
@@ -26,8 +26,8 @@ export default {
   mounted() {
     axios.get(this.baseUrl).then((response) => {
       //console.log(response.data)
-      this.card = response.data;
-      console.log(this.card); 
+      this.cards = response.data;
+      console.log(this.cards); 
     });
   }
   
@@ -40,7 +40,7 @@ export default {
 
     <AppHeader/>
 
-    <AppMain/>
+    <AppMain :allCards="cards"/>
 
     <AppFooter/>
 </template>
